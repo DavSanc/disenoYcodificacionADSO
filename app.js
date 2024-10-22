@@ -8,7 +8,10 @@ app.get('/', (req, res) => {
 
 app.get('/login', (req, res) => {
     const datos = req.query;
+    console.log(datos);
     res.send('Inicio de sesion')
+    
+    
   })
 
   app.get('/validate', (req, res) => {
