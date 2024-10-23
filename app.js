@@ -22,14 +22,19 @@ try {
         "SELECT * FROM `usuarios` WHERE `usuario` = ? AND `clave` = ?",
         [datos.usuario, datos.clave]
     );
+    if(results.length > 0){
+        res.status(200).send('Inicio de sesion correcto')
+    } else{
+        res.status(401).send('Datos incorrectos')
+    }
   
     console.log(results); // results contains rows returned by server
     console.log(fields); // fields contains extra meta data about results, if available
   } catch (err) {
     console.log(err);
   }
-    console.log(datos);
-    res.send('Inicio de sesion')
+    
+    
     
     
   })
